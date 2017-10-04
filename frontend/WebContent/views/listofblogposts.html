@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="css/style.css">
+<style>
+body
+{
+    background-image: url("images/Blog2.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+b
+{
+background-color:honeydew;
+}
+
+</style>
+<div ng-show="currentUser.role=='ADMIN'">
+ List Of BlogPosts Waiting for Approval.<br>
+
+<table class="table table-striped">
+<thead>
+<tr><th>Title</th><th>Author</th><th>Posted on</th></tr>
+</thead>
+<tbody>
+<tr ng-repeat="blog in blogPostsWaitingForApproval">
+<td><a href="#/approveblogpost/{{blog.id}}">{{blog.blogTitle}}</td><td>{{blog.postedBy.username}}</td><td>{{blog.postedOn | date:'yyyy/MM/dd'}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+List Of Blog Posts Which Are Approved<br>
+<table class="table table-striped">
+<thead>
+<tr><th>Title</th><th>Author</th><th>Posted on</th></tr>
+</thead>
+<tbody>
+<tr ng-repeat="blog in blogPostsApproved">
+<td><a href="#/getblogpostbyid/{{blog.id}}">{{blog.blogTitle}}</td><td>{{blog.postedBy.username}}</td><td>{{blog.postedOn | date:'yyyy/MM/dd'}}</td>
+</tr>
+</tbody>
+</table>
+</div>
