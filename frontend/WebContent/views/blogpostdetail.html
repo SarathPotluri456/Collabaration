@@ -2,7 +2,7 @@
 <style>
 body
 {
-    background-image: url("images/Blog2.jpg");
+    background-image: url("images/blog1.jpg");
     background-repeat: no-repeat;
 	opacity:0.8;
     background-size: 100%; 
@@ -11,15 +11,23 @@ body
 }
 
 </style>
+<p class="form-title">
+              <font color="blue">
 <div class="row">
 <div>
 <div class="panel panel-default">
 <div class="panel-heading">
-<div>{{blogPost.blogTitle}}
+<div>
+<p class="form-title">
+              <font color="blue">
+<b>{{blogPost.blogTitle}}</b>
+</font></p>
 </div>
-<span><strong>CreatedBy:</strong>{{blogPost.postedBy.username}}
+<span>
+<strong><font color="red">CreatedBy:</font></strong><font color="blue">{{blogPost.postedBy.username}}</font><br>
 </span>
-<span><strong>Created On:</strong>{{blogPost.postedOn | date:'medium'}}</span>
+<span>
+<strong><font color="red">Created On:</font></strong><font color="blue">{{blogPost.postedOn | date:'medium'}}</font></span>
 
 </div>
 <div class="panel-body">
@@ -31,12 +39,12 @@ body
 {{error.message}}
 <form>
 <textarea rows="4" cols="15" ng-model="blogComment.commentText"></textarea>
-<input type="submit" ng-click="addComment()">
+<input type="submit" value="AddBlogPost"  ng-click="addComment()" class="btn btn-success btn-sm">
 </form>
-<a ng-click="getComments()">Show Comments</a>
+<a ng-click="getComments()"><b><font color="red">Show Comments</font></b></a>
 <ul ng-show="ShowComments">
 <li ng-repeat="blogComment in blogComments" style="list-style : none">
 <span>{{blogComment.commentText}}</span>
-<span><strong>CommentedBy:</strong>{{blogComment.commentedBy.username}}</span>
-<span><strong>CommentedOn:</strong>{{blogComment.commentedOn | date : 'MM/dd/yyyy'}}</span>
+<span><strong><font color="red">CommentedBy:</font></strong>{{blogComment.commentedBy.username}}</span>
+<span><strong><font color="red">CommentedOn:</font></strong>{{blogComment.commentedOn | date : 'MM/dd/yyyy'}}</span>
 </ul>

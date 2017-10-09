@@ -34,6 +34,9 @@ body
 	background-color: black;
 	color: white;
 }
+.nav.navbar-nav.navbar-right li a {
+    color: blue;
+}
 </style>
             <nav class="navbar navbar-default">
          
@@ -79,8 +82,9 @@ body
                  <li><a href="#/listoffriends">List of Friends</a></li>
                 </ul></li>
                 <li><a href="#/chat" ng-show="currentUser.username">Chat </a></li>
-                 <li><a href="#/register" ng-hide="currentUser.firstname">Sign Up</a></li>
-                 <li><a href="#/login" ng-hide="currentUser.firstname">Login</a></li>
+                <li><a href="#/register" ng-hide="currentUser.firstname"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#/login" ng-hide="currentUser.firstname"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                 
                  
                 
                 </ul>
@@ -90,7 +94,7 @@ body
 			<li><a href="#/uploadprofilepic" ng-show="currentUser.firstname">
                  <img src="http://localhost:8090/backend/getimage/{{currentUser.username}}" 
                  alt="Upload ProfilePic" height="30px" width="30px" class="img-rounded"></a> </li>
-            <li><a href="" ng-click="logout()" ng-show="currentUser.firstname" >Logout</a></li></ul></div>
+            <li><a href="" ng-click="logout()" class="glyphicon glyphicon-log-out" ng-show="currentUser.firstname" >Logout</a></li></ul></div>
   
 
 </div>
@@ -143,19 +147,25 @@ body
 			<div class="navbar-text noStyle pull-right">
 			<h4>Website developed and maintained by Sarath Potluri</h4></marquee>
 				<a href="https://www.facebook.com/" target="_blank">
-					<i class="fa fa-facebook fa-2x"></i>
+				<i class="fa fa-facebook" style="font-size:36px;color:blue"></i>
+					
+			
 				</a>
 				<a href="https://twitter.com/" target="_blank">
-					<i class="fa fa-twitter fa-2x"></i>
+				<i class="fa fa-twitter" style="font-size:36px;color:blue"></i>
+					
 				</a>
 				<a href="http://linkedin.com/in/" target="_blank">
-					<i class="fa fa-linkedin fa-2x"></i>
+				<i class="fa fa-linkedin" style="font-size:36px;color:blue"></i>
+					
 				</a>
 				<a href="https://plus.google.com/" target="_blank">
-					<i class="fa fa-google-plus fa-2x"></i>
+				<i class="fa fa-google-plus" style="font-size:36px;color:blue"></i>
+					
 				</a>
 				<a href="https://github.com/" target="_blank">
-					<i class="fa fa-github fa-2x"></i>
+				<i class="fa fa-github" style="font-size:36px;color:blue"></i>
+					
 				</a>
 				
 			</div>

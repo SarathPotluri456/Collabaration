@@ -2,7 +2,7 @@
 <style>
 body
 {
-    background-image: url("images/Blog2.jpg");
+    background-image: url("images/blog1.jpg");
     background-repeat: no-repeat;
 	opacity:0.8;
     background-size: 100%; 
@@ -22,12 +22,12 @@ background-color:honeydew;
 				<div class="col-sm-4">
 <div class="panel panel-default">
 <div class="panel-heading">
-<div>{{blogPost.blogTitle}}
+<div><font color="blue">{{blogPost.blogTitle}}</font>
 </div>
 
-<span><strong>CreatedBy:</strong>{{blogPost.postedBy.username}}
+<span><strong><font color="blue">CreatedBy:</font></strong>{{blogPost.postedBy.username}}
 </span>
-<span><strong>Created On:</strong>{{blogPost.postedOn | date:'medium'}}</span>
+<span><strong><font color="blue">Created On:</font></strong>{{blogPost.postedOn | date:'medium'}}</span>
 
 </div>
 <div class="panel-body">
@@ -38,9 +38,9 @@ background-color:honeydew;
 
 <div class="form-group">
 
-<input type="radio" ng-model="blogPost.approved" value="true">Approve
-<input type="radio" ng-model="blogPost.approved" value="false">Reject
-<input type="submit" ng-click="updateBlogPost()">
+<input type="radio" ng-model="blogPost.approved" value="true"><font color="blue">Approve</font>
+<input type="radio" ng-model="blogPost.approved" value="false"><font color="red">Reject</font>
+<input type="submit" value="Permission" class="btn btn-success btn-sm" ng-click="updateBlogPost()">
 </div>
 </div>
 </div>
